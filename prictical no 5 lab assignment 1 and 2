@@ -1,0 +1,59 @@
+"""
+========================================
+Practical 5 – Lab Assignment 1
+Store integers in a Tuple and perform operations
+========================================
+"""
+
+# Taking input from user
+numbers = tuple(map(int, input("Enter integers separated by space: ").split()))
+
+# a) Print total number of items
+print("\nTotal number of items:", len(numbers))
+
+# b) Print last item
+print("Last item in tuple:", numbers[-1])
+
+# c) Print tuple in reverse order
+print("Tuple in reverse order:", numbers[::-1])
+
+# d) Check if 5 is present
+if 5 in numbers:
+    print("Yes, 5 is present in the tuple.")
+else:
+    print("No, 5 is not present in the tuple.")
+
+# e) Remove first and last items, sort remaining, print result
+if len(numbers) > 2:
+    remaining = numbers[1:-1]
+    sorted_remaining = tuple(sorted(remaining))
+    print("Sorted tuple after removing first and last items:", sorted_remaining)
+else:
+    print("Not enough elements to remove first and last.")
+
+
+"""
+========================================
+Practical 5 – Lab Assignment 2
+Store prices of sold items in a Tuple
+========================================
+"""
+
+prices = tuple(map(float, input("\nEnter item prices separated by space: ").split()))
+
+# a) Total number of items sold
+print("\nTotal number of items sold:", len(prices))
+
+# b) Cheapest item price
+print("Cheapest item price:", min(prices))
+
+# c) Costliest item price
+print("Costliest item price:", max(prices))
+
+# d) Prices in ascending order
+print("Prices in ascending order:", tuple(sorted(prices)))
+
+# e) Number of costliest items sold
+costliest_price = max(prices)
+count_costliest = prices.count(costliest_price)
+print("Number of costliest items sold:", count_costliest)
