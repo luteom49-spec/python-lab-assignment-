@@ -1,0 +1,42 @@
+class Employee:
+    def __init__(self, name, emp_id, department, basic_salary):
+        self.name = name
+        self.emp_id = emp_id
+        self.department = department
+        self.basic_salary = basic_salary
+
+    def calculate_salary(self):
+        self.DA = 0.92 * self.basic_salary
+        self.HRA = 0.58 * self.basic_salary
+        self.TA = 0.30 * self.basic_salary
+        self.LIC = 500
+
+        self.gross_salary = self.basic_salary + self.DA + self.HRA + self.TA
+        self.net_salary = self.gross_salary - self.LIC
+
+    def display_details(self):
+        print("\n------ Employee Details ------")
+        print("Name:", self.name)
+        print("Employee ID:", self.emp_id)
+        print("Department:", self.department)
+        print("Basic Salary: Rs.", self.basic_salary)
+        print("DA (92%): Rs.", self.DA)
+        print("HRA (58%): Rs.", self.HRA)
+        print("TA (30%): Rs.", self.TA)
+        print("LIC Deduction: Rs.", self.LIC)
+        print("Gross Salary: Rs.", self.gross_salary)
+        print("Net Salary: Rs.", self.net_salary)
+
+
+# Taking input from user
+name = input("Enter Employee Name: ")
+emp_id = input("Enter Employee ID: ")
+department = input("Enter Department: ")
+basic_salary = float(input("Enter Basic Salary: "))
+
+# Creating object
+emp = Employee(name, emp_id, department, basic_salary)
+
+# Calculating and displaying salary
+emp.calculate_salary()
+emp.display_details()
