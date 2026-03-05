@@ -1,0 +1,250 @@
+# PRACTICAL 3 – TASK 1
+# All patterns in one program with space between each figure
+
+# -------------------------
+# Pattern 1
+# 1
+# 12
+# 123
+# 1234
+# 12345
+# -------------------------
+for i in range(1, 6):
+    for j in range(1, i + 1):
+        print(j, end="")
+    print()
+print("\n")
+
+
+# -------------------------
+# Pattern 2
+# 1
+# 22
+# 333
+# 4444
+# 55555
+# -------------------------
+for i in range(1, 6):
+    for j in range(i):
+        print(i, end="")
+    print()
+print("\n")
+
+
+# -------------------------
+# Pattern 3
+# 1
+# 21
+# 321
+# 4321
+# 54321
+# -------------------------
+for i in range(1, 6):
+    for j in range(i, 0, -1):
+        print(j, end="")
+    print()
+print("\n")
+
+
+# -------------------------
+# Pattern 4
+# 1
+# 10
+# 101
+# 1010
+# 10101
+# -------------------------
+for i in range(1, 6):
+    for j in range(1, i + 1):
+        if j % 2 == 1:
+            print(1, end="")
+        else:
+            print(0, end="")
+    print()
+print("\n")
+
+
+# -------------------------
+# Pattern 5
+# 2
+# 4 6
+# 8 10 12
+# 14 16 18 20
+# -------------------------
+num = 2
+for i in range(1, 5):
+    for j in range(i):
+        print(num, end=" ")
+        num += 2
+    print()
+print("\n")
+
+
+# -------------------------
+# Pattern 6
+# *
+# **
+# ***
+# ****
+# *****
+# -------------------------
+for i in range(1, 6):
+    for j in range(i):
+        print("*", end="")
+    print()
+""""
+
+
+
+
+# PRACTICAL 3 – TASK 2
+# All patterns in one program with space between each figure
+
+
+# -------------------------
+# Pattern 1
+# A
+# AB
+# ABC
+# ABCD
+# ABCDE
+# -------------------------
+for i in range(1, 6):
+    for j in range(65, 65 + i):   # ASCII of A = 65
+        print(chr(j), end="")
+    print()
+print("\n")
+
+
+# -------------------------
+# Pattern 2
+# *
+# * #
+# * # *
+# * # * #
+# * # * # *
+# -------------------------
+for i in range(1, 6):
+    for j in range(1, i + 1):
+        if j % 2 == 1:
+            print("*", end=" ")
+        else:
+            print("#", end=" ")
+    print()
+print("\n")
+
+
+# -------------------------
+# Pattern 3
+# p
+# y y
+# t t t
+# h h h h
+# o o o o o
+# -------------------------
+word = "python"
+
+for i in range(5):
+    for j in range(i + 1):
+        print(word[i], end=" ")
+    print()
+print("\n")
+
+
+# -------------------------
+# Pattern 4
+# p
+# p y
+# p y t
+# p y t h
+# p y t h o
+# p y t h o n
+# -------------------------
+word = "python"
+
+for i in range(1, len(word) + 1):
+    for j in range(i):
+        print(word[j], end=" ")
+    print()
+    """"
+""""
+    # TASK-3
+
+n = int(input())
+
+for i in range(1, n + 1):
+    print(i, end="")
+
+    """""
+""""
+
+    # Task-4
+    # Program to print inverted star pattern
+
+for i in range(5, 0, -1):
+    for j in range(i):
+        print("*", end=" ")
+    print()
+    """"
+    # ===============================
+# PRACTICAL 3 – TASK 5, 6, 7
+# ===============================
+
+
+# -------------------------------
+# TASK 5 – Pyramid Star Pattern
+# -------------------------------
+print("TASK 5 – Pyramid Pattern\n")
+
+rows = 5
+
+for i in range(1, rows + 1):
+    # Print spaces
+    for j in range(rows - i):
+        print(" ", end=" ")
+    
+    # Print stars
+    for k in range(2 * i - 1):
+        print("*", end=" ")
+    
+    print()
+
+print("\n")
+
+
+# -------------------------------
+# TASK 6 – Side Triangle Pattern
+# -------------------------------
+print("TASK 6 – Side Triangle Pattern\n")
+
+for i in range(1, 6):
+    for j in range(i):
+        print("*", end=" ")
+    print()
+
+for i in range(4, 0, -1):
+    for j in range(i):
+        print("*", end=" ")
+    print()
+
+print("\n")
+
+
+# -------------------------------
+# TASK 7 – Prime Number Finder
+# -------------------------------
+print("TASK 7 – Prime Numbers Between Two Numbers\n")
+
+start = int(input("Enter starting number: "))
+end = int(input("Enter ending number: "))
+
+print("Prime numbers are:")
+
+for num in range(start, end + 1):
+    if num > 1:
+        for i in range(2, num):
+            if num % i == 0:
+                break
+        else:
+            print(num, end=" ")
+            """
