@@ -1,0 +1,65 @@
+import numpy as np
+
+
+"""
+========================================
+Lab Assignment – 1 (a)
+Generate a 4x4 Identity Matrix
+========================================
+"""
+
+identity_matrix = np.identity(4, dtype=int)
+print("4x4 Identity Matrix:\n", identity_matrix)
+
+
+"""
+========================================
+Lab Assignment – 1 (b)
+Generate two 3x3 random matrices (1-9)
+Perform Addition and Multiplication
+========================================
+"""
+
+matrix1 = np.random.randint(1, 10, (3, 3))
+matrix2 = np.random.randint(1, 10, (3, 3))
+
+print("\nMatrix 1:\n", matrix1)
+print("\nMatrix 2:\n", matrix2)
+
+# Addition
+addition = matrix1 + matrix2
+print("\nMatrix Addition:\n", addition)
+
+# Multiplication
+multiplication = np.dot(matrix1, matrix2)
+print("\nMatrix Multiplication:\n", multiplication)
+
+
+"""
+========================================
+Lab Assignment – 2
+Multiply 5x3 matrix with 3x2 matrix
+(Take input from user)
+========================================
+"""
+
+print("\nEnter elements for 5x3 matrix:")
+mat1 = []
+for i in range(5):
+    row = list(map(int, input(f"Enter 3 elements for row {i+1}: ").split()))
+    mat1.append(row)
+
+print("\nEnter elements for 3x2 matrix:")
+mat2 = []
+for i in range(3):
+    row = list(map(int, input(f"Enter 2 elements for row {i+1}: ").split()))
+    mat2.append(row)
+
+mat1 = np.array(mat1)
+mat2 = np.array(mat2)
+
+product = np.dot(mat1, mat2)
+
+print("\n5x3 Matrix:\n", mat1)
+print("\n3x2 Matrix:\n", mat2)
+print("\nProduct Matrix (5x2):\n", product)
