@@ -1,0 +1,10 @@
+# Program to calculate current using Ohm's Law
+
+voltage = float(input("Enter Voltage (V): "))
+resistance = float(input("Enter Resistance (R): "))
+
+if resistance == 0:
+    print("Resistance cannot be zero.")
+else:
+    current = voltage / resistance
+    print(f"Current (I) = {current:.2f} A")
