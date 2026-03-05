@@ -1,0 +1,46 @@
+class Vendor:
+    def __init__(self, name, year_of_association, contact_number, email):
+        self.name = name
+        self.year_of_association = year_of_association
+        self.contact_number = contact_number
+        self.email = email
+        self.monthly_purchases = []
+
+    def add_monthly_purchase(self, amount):
+        self.monthly_purchases.append(amount)
+
+    def generate_annual_report(self):
+        total = sum(self.monthly_purchases)
+        average = total / len(self.monthly_purchases) if self.monthly_purchases else 0
+
+        print("\n----- Annual Purchase/Billing Report -----")
+        print(f"Vendor Name           : {self.name}")
+        print(f"Year of Association   : {self.year_of_association}")
+        print(f"Contact Number        : {self.contact_number}")
+        print(f"Email ID              : {self.email}")
+        print("------------------------------------------")
+        
+        for i, amount in enumerate(self.monthly_purchases, start=1):
+            print(f"Month {i} Purchase     : ₹{amount:.2f}")
+
+        print("------------------------------------------")
+        print(f"Total Annual Purchase : ₹{total:.2f}")
+        print(f"Average Monthly Bill  : ₹{average:.2f}")
+        print("------------------------------------------")
+
+
+# Main Program
+print("Enter Vendor Details")
+name = input("Vendor Name: ")
+year = int(input("Year of Association: "))
+contact = input("Contact Number: ")
+email = input("Email ID: ")
+
+vendor = Vendor(name, year, contact, email)
+
+print("\nEnter Purchase Amount for 12 Months:")
+for month in range(1, 13):
+    amount = float(input(f"Month {month}: "))
+    vendor.add_monthly_purchase(amount)
+
+vendor.generate_annual_report()
